@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-icons-1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<style>
+     html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        .hero {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1505404919720-50ac8bd6f4e9?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(0,123,255,0.45);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding: 0 1rem;
+        }
+        .btn-discover {
+            background-color: #ffc107;
+            border: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            font-size: 1.25rem;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-discover:hover {
+            background-color: #e0a800;
+            transform: scale(1.1);
+        }
+        .section-title {
+            color: #007bff;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 0.4rem;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .card-img-top {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .card-img-top:hover {
+            transform: scale(1.03);
+        }
+         .avis {
+      background-color: #fff;
+      padding: 60px 0;
+    }
+    .avis .card {
+      border-left: 5px solid #007bff;
+      background: #fafafa;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+    .avis .card:hover {
+      transform: translateY(-5px);
+    }
+    .avis .card p {
+      font-style: italic;
+      color: #444;
+    }
+    .avis .card h6 {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #007bff;
+    }
+    .hidden {
+  display: none;
+}
+
+.btn-voir-plus {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-voir-plus:hover {
+  background-color: #0056b3;
+}
+ .map iframe {
+      width: 100%;
+      border: none;
+      height: 400px;
+      border-radius: 15px;
+    }
+
+.social-icons a {
+            font-size: 1.8rem;
+            color: #0d6efd;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #ffc107;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #0d6efd;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            .card-img-top {
+                height: 180px;
+            }
+        }
+
+        .col-md-3 {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+ .col-md-3:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#hero">Essaouira Vibes</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#places">Lieux à visiter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#activities">Activités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#crafts">Produits artisanaux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#avis">Avis des visiteurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#map">Carte des lieux</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Bienvenue à Essaouira, la perle de l’Atlantique</h1>
+            <p class="lead">Découvrez la beauté intemporelle, la culture riche et l'histoire fascinante de cette ville côtière marocaine.  </p>
+            <a href="#about" class="btn btn-discover mt-3">Découvrir</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">À propos d'Essaouira</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="essaouira.jpg" alt="Rue animée d'Essaouira" class="img-fluid rounded" />
+                </div>
+                <div class="col-md-6">
+                    <p> Essaouira, anciennement connue sous le nom de Mogador, est une charmante ville portuaire et station balnéaire sur la côte atlantique du Maroc, célèbre pour ses remparts historiques, sa médina classée au patrimoine mondial de l'UNESCO, et son atmosphère détendue; la région était déjà fréquentée dans l'Antiquité par les Phéniciens et les Romains pour la production de pourpre impériale, mais la ville moderne a été fondée au milieu du XVIIIe siècle par le sultan Mohammed III, qui l'a conçue avec l'aide d'architectes européens pour en faire un port de commerce majeur et une base militaire, ce qui lui a valu le nom d'Essaouira, signifiant "la bien dessinée"; après un âge d'or commercial et culturel, notamment grâce à une importante communauté juive, son importance a décliné avec le développement d'autres ports au XXe siècle avant de connaître un renouveau dans les années 1960 en attirant artistes et musiciens, et d'obtenir la reconnaissance de l'UNESCO en 2001 pour son architecture unique et son histoire riche. Pour plus d'informations, consultez le site officiel de l'UNESCO.  </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="places" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Lieux à visiter</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="essaouira 2.jpg" alt="Remparts Essaouira" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">Remparts d’Essaouira</h5>
+                            <p class="card-text">Les célèbres remparts surplombent la mer et témoignent de l’histoire fortifiée de la cité.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="skala.jpg" alt="Kasbah Skala Essaouira" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">Skala de la Kasbah</h5>
+                            <p class="card-text">Fortifications portugaises avec vues splendides sur l’Atlantique et ses falaises.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="téléchargement (2).jpg" alt="Port de pêche Essaouira" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">Port de pêche</h5>
+                            <p class="card-text">Un port actif coloré où l’on peut voir les bateaux de pêche traditionnels et déguster les fruits de mer frais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="mellah.jpg" alt="mellah" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">Le Mellah - Quartier Juif</h5>
+                            <p class="card-text">Le quartier juif historique, avec ses ruelles et la synagogue Bayt Dakira, témoigne de la diversité culturelle de la ville.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="sidi kaouki.jpg" alt="sidi kaouki" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">Plage de Sidi Kaouki</h5>
+                            <p class="card-text">Une plage tranquille proche de la ville, idéale pour le surf et admirer de magnifiques couchers de soleil.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="musée.webp" alt="Musée Sidi Mohamed Ben Abdallah" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">Musée Sidi Mohamed Ben Abdallah</h5>
+                            <p class="card-text">Musée présentant des objets traditionnels, instruments de musique et photos retraçant l’histoire et la culture de la ville.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <section id="activities" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Activités</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <img src="surf.jpg" alt="Kitesurf" class="img-fluid rounded mb-3" />
+                    <h5>Kitesurf</h5>
+                    <p>Profitez des vents constants pour pratiquer ce sport excitant sur la plage.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="balade.jpg" alt="Balades chameau" class="img-fluid rounded mb-3" />
+                    <h5>Balades à dos de chameau</h5>
+                    <p>Parcourez les dunes et le littoral avec une expérience unique.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="GNAOUA.jpg" alt="Festival musique" class="img-fluid rounded mb-3" />
+                    <h5>Festivals de musique</h5>
+                    <p>Vivez la magie du festival de musique gnawa emblématique d'Essaouira.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="cuisine.jpg" alt="cuisine" class="img-fluid rounded mb-3" />
+                    <h5>Dégustation des pâtisseries d’Essaouira</h5>
+                    <p>Goûtez aux fameuses pâtisseries traditionnelles de la ville, comme les cornes de gazelle et les chebakia, pour une expérience gourmande inoubliable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="crafts" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Produits artisanaux</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="thuya.webp" alt="Bois de thuya" class="card-img-top image-hover" />
+                        <div class="card-body">
+                            <h5>Bois de thuya</h5>
+                            <p>Sculptures parfumées et objets traditionnels uniques.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="bijoux.jpg" alt="Bijoux berbères" class="card-img-top image-hover" />
+                        <div class="card-body">
+                            <h5>Bijoux berbères</h5>
+                            <p>Argent massif, motifs traditionnels amazighs et pierres fines.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="graine-d-argan.jpg" alt="Huile d'argan" class="card-img-top image-hover" />
+                        <div class="card-body">
+                            <h5>Huile d’argan</h5>
+                            <p>Huile précieuse aux vertus nourrissantes et protectrices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="tapis.webp" alt="Tapis marocains" class="card-img-top image-hover" />
+                        <div class="card-body">
+                            <h5>Tapis marocains</h5>
+                            <p>Subtiles tissages colorés illustrant l'artisanat local.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="avis" class="avis">
+    <div class="container">
+      <h2 class="section-title">Avis des visiteurs</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card p-3">
+            <p>"Essaouira changed my mind about slow travel. The music and the wind—pure magic."</p>
+            <h6>- Sarah, California</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3">
+            <p>"ⵏⴽⴽⵉ ⵉⵡⵉⵙ ⵏ ⵎⵓⴳⴰⴷⵓⵕ ⴳⵔ ⴰⵣⵓⵍ, ⵜⵉⵖⵔⵎⵜ ⵎⴰ ⵓⵔ ⵜⵜⴰⴼⴰⵖ, ⴽⵓ ⵉⵖ ⴰⵔ ⴳ ⵓⵎⵣⵔⵓⵢ ⴷ ⵜⵓⵊⵊⵓⵜ, ⵎⴷⴷⵏ ⴰⴷⵖⴰⵔ ⴳ ⵓⵙⵓⵏⴼⵓ ⵏ ⵡⴰⵢⵍⴰⵍⵏ."</p>
+            <h6>- Nour Eddine, Maroc</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3">
+            <p>"Repas de poisson au port, coucher de soleil sur les remparts — inoubliable."</p>
+            <h6>- Habiba, Maroc</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <section id="map" class="map bg-light">
+    <div class="container">
+      <h2 class="section-title">Carte des lieux</h2>
+      <iframe src="https://www.google.com/maps/place/Essaouira/@31.5109436,-9.7625422,14z/data=!3m1!4b1!4m6!3m5!1s0xdad9a4e9f588ccf:0x57421a176d5d7d30!8m2!3d31.5084926!4d-9.7595041!16zL20vMDIzajd6?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D"></iframe>
+    </div>
+  </section>
+   <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-discover">Envoyer
+                            <i class="bi-send-fill"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h5>Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Meryem vous souhaite une merveilleuse découverte de Essaouira!</p>
+            <p>&copy; 2025 Essaouira Vibes - Meryem El mouassaa</p>
+        </div>
+    </footer>
+</body>
+</html>
